@@ -161,14 +161,14 @@
                value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF,
                       RECORD_DEF, COMPACT_CTOR_DEF"/>
     </module>
-   <!-- <module name="Indentation"> Adding new checkstyle
-      <property name="basicOffset" value="4"/>
+    <module name="Indentation"> Adding new checkstyle
+      <property name="basicOffset" value="2"/>
       <property name="braceAdjustment" value="2"/>
       <property name="caseIndent" value="2"/>
       <property name="throwsIndent" value="4"/>
       <property name="lineWrappingIndentation" value="4"/>
       <property name="arrayInitIndent" value="2"/> 
-    </module> -->
+    </module> 
     <module name="AnnotationLocation">
       <property name="id" value="AnnotationLocationVariables"/>
       <property name="tokens" value="VARIABLE_DEF"/>
