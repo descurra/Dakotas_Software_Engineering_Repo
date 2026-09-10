@@ -161,7 +161,7 @@
                value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF,
                       RECORD_DEF, COMPACT_CTOR_DEF"/>
     </module>
-    <module name="NoWhitespaceBefore">
+    <module name="NoWhitespaceBefore"> <!--New checkstyle-->
       <property name="tokens"
                value="COMMA, SEMI, POST_INC, POST_DEC, DOT,
                     LABELED_STAT, METHOD_REF, ELLIPSIS"/>
