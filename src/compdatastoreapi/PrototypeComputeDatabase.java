@@ -3,8 +3,8 @@
 //COMPUTE ENGINE = FRONT END 
 //DATA STORAGE = BACK END 
 
-package api2;
-import api2.calculate.Calculate;
+package compdatastoreapi;
+import compdatastoreapi.calculate.Calculate;
 
 public class PrototypeComputeDatabase{
     public void prototype(Calculate calculate){

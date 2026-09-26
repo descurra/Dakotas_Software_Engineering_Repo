@@ -3,8 +3,8 @@
 //USER = FRONT END 
 //COMPUTE ENGINE = BACK END 
 
-package api1;
-import api1.user.User;
+package usercomputeengineapi;
+import usercomputeengineapi.user.User;
 
 public class PrototypeUserComputeApi{
     public void prototype(User user){

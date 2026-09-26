@@ -1,4 +1,4 @@
-package api1.webserver;
+package usercomputeengineapi.webserver;
 
 public class PrototypeWebServer{
     public void prototype(WebServer webserver){

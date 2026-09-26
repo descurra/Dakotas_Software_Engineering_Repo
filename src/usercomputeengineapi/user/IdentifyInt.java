@@ -1,4 +1,4 @@
-package api1.user;
+package usercomputeengineapi.user;
 
 public interface IdentifyInt{
     //Tells if input is a whole number.
