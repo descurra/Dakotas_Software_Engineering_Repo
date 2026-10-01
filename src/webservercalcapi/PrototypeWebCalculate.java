@@ -8,6 +8,7 @@ import project.annotations.ConceptualAPIPrototype;
 import webservercalcapi.webserver.WebServer;
 
 public class PrototypeWebCalculate{
+    
     @ConceptualAPIPrototype
     public void prototype(WebServer webserver){
 
