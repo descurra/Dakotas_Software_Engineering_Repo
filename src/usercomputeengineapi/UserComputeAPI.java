@@ -3,6 +3,6 @@ package usercomputeengineapi;
 import project.annotations.NetworkAPI;
 
 @NetworkAPI
-public interface UserComputeInterface{
+public interface UserComputeAPI{
     
 }

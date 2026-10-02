@@ -8,7 +8,7 @@ import project.annotations.NetworkAPIPrototype;
 
 public class PrototypeUserComputeApi{
     @NetworkAPIPrototype
-    public void prototype(UserComputeInterface api){
+    public void prototype(UserComputeAPI api){
         
     }
     
