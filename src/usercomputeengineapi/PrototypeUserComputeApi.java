@@ -4,10 +4,11 @@
 //COMPUTE ENGINE = BACK END 
 
 package usercomputeengineapi;
-import usercomputeengineapi.user.User;
+import project.annotations.NetworkAPIPrototype;
 
 public class PrototypeUserComputeApi{
-    public void prototype(User user){
+    @NetworkAPIPrototype
+    public void prototype(UserComputeAPI api){
         
     }
     

@@ -4,10 +4,11 @@
 //DATA STORAGE = BACK END 
 
 package compdatastoreapi;
-import compdatastoreapi.calculate.Calculate;
+import project.annotations.ProcessAPIPrototype;
 
 public class PrototypeComputeDatabase{
-    public void prototype(Calculate calculate){
+    @ProcessAPIPrototype
+    public void prototype(ComputeDatabaseAPI api){
         
     }
     
