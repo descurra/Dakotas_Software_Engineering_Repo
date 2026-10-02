@@ -5,12 +5,11 @@
 
 package webservercalcapi;
 import project.annotations.ConceptualAPIPrototype;
-import webservercalcapi.webserver.WebServer;
 
 public class PrototypeWebCalculate{
 
     @ConceptualAPIPrototype
-    public void prototype(WebServer webserver){
+    public void prototype(WebCalculateAPI api){
 
     }
 
