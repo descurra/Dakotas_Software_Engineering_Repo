@@ -10,6 +10,15 @@ public class PrototypeWebCalculate{
 
     @ConceptualAPIPrototype
     public void prototype(WebCalculateAPI api){
+        //Initialize
+
+
+        //Read
+
+        //Write
+
+        //Compute
+        
 
     }
 
