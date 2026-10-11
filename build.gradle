@@ -30,8 +30,11 @@ test {
     useJUnitPlatform()
 
 	filter{
-		includeTestsMatching "TestCompEngDatabaseAPI.java"
-		includeTestsMatching "TestUserCompEngAPI.java"
-		includeTestsMatching "TestWebServerCalcAPI.java"
+		includeTestsMatching "TestCompEngDatabaseAPI"
+		includeTestsMatching "TestUserCompEngAPI"
+		includeTestsMatching "TestWebServerCalcAPI"
+		includeTestsMatching "InMemoryInputConfig"
+		includeTestsMatching "InMemoryOutputConfig"
+		includeTestsMatching "ComputeEngineIntegrartionTest"
 	}
 }
