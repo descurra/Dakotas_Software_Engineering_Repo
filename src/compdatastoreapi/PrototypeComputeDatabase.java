@@ -14,7 +14,7 @@ public class PrototypeComputeDatabase{
         String readUserInput = "user_input_int";
 
         //Write from user specified input
-        //String write
+        String writeUserInput = "database_sheet";
         
 
 
