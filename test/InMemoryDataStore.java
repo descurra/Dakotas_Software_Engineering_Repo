@@ -12,10 +12,11 @@ public class InMemoryDataStore implements DataStorage{
 
     @Override
     public boolean write(OutputConfig outputConfig, List<String> data) {
-        if (outputConfig == null || outputConfig.getDataOutput() == null) {
+        if(outputConfig == null || outputConfig.getDataOutput() == null) {
             return false;
         }else{
-        return true;}
+        return true;
+        }
     }
 
 }
