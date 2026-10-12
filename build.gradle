@@ -38,6 +38,6 @@ test {
 		includeTestsMatching "TestWebServerCalcAPI"
 		includeTestsMatching "InMemoryInputConfig"
 		includeTestsMatching "InMemoryOutputConfig"
-		includeTestsMatching "ComputeEngineIntegrartionTest"
+		includeTestsMatching "ComputeEngineIntegrationTest"
 	}
 }
