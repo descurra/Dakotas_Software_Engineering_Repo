@@ -5,6 +5,9 @@ import configurations.InputConfig;
 import configurations.OutputConfig;
 
 public class InMemoryDataStore implements DataStorage{
+
+    public InMemoryDataStore() {
+    }
     @Override
     public List<Integer> read(InputConfig inputConfig) {
         return inputConfig.getData();
