@@ -24,7 +24,7 @@ public class TestCompEngDatabaseAPI{
     public void testWrtieToOutputSource(){
         PrototypeComputeDatabase testWrtieToOutputSource = new PrototypeComputeDatabase();
         String source = "mock_destination";
-        List<Integer> expectedDataToWrite = Arrays.asList(10, 20, 30);
+        List<Integer> expectedDataToWrite = Arrays.asList(1, 10, 25);
         List<Integer> actualDataToWrite = writeFromInputSource(source);
 
         checkOutput(expectedDataToWrite, actualDataToWrite, testWrtieToOutputSource);
