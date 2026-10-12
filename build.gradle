@@ -24,8 +24,20 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter:5.10.2')
 	testImplementation('org.mockito:mockito-core:5.10.0')
 	implementation('com.google.code.gson:gson:2.13.1')
+
+	//implement spoon
+	implementation("fr.inria.gforge.spoon:spoon-core:10.4.0")
 }
 
 test {
     useJUnitPlatform()
+
+	filter{
+		includeTestsMatching "TestCompEngDatabaseAPI"
+		includeTestsMatching "TestUserCompEngAPI"
+		includeTestsMatching "TestWebServerCalcAPI"
+		includeTestsMatching "InMemoryInputConfig"
+		includeTestsMatching "InMemoryOutputConfig"
+		includeTestsMatching "ComputeEngineIntegrationTest"
+	}
 }

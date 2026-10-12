@@ -1,5 +1,5 @@
 package compdatastoreapi.datastorage;
 
-public interface Read{
+public interface WriteUserInput{
     
 }

@@ -4,5 +4,6 @@ import project.annotations.ConceptualAPI;
 
 @ConceptualAPI
 public interface WebCalculateAPI{
+    String computeResult(int input);
 
 }
