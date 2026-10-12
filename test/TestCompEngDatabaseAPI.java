@@ -31,11 +31,11 @@ public class TestCompEngDatabaseAPI{
     }
 
     private List<Integer> readInputData(String source){
-        return null;
+        return source.equals("mock_data") ? Arrays.asList(1, 10, 25) : null;
     }
 
     private List<Integer> readFromInputSource(String source){
-        return null;
+        return source.equals("mock_data") ? Arrays.asList(1, 10, 25) : null;
 
     }
 
@@ -45,7 +45,7 @@ public class TestCompEngDatabaseAPI{
     }
 
     private List<Integer> writeFromInputSource(String source){
-        return null;
+        return source.equals("mock_destination") ? Arrays.asList(1, 10, 25) : null;
     }
 
     private void checkOutput(List<Integer> expected, List<Integer> actual, PrototypeComputeDatabase testWriteToOutputSource){
