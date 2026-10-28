@@ -4,7 +4,12 @@ import project.annotations.NetworkAPI;
 
 @NetworkAPI
 public interface UserComputeAPI {
-    void configureJob(String inputSource, char delimeter, String outputDestination);
-    
-    
+    JobRequest submitJob(JobResponse job);
+    //Job request will return the Job response
+
 }
+
+//reutns job respionse 
+//JobRequest submitjob (JobRequest job)
+//don't use void 
+//If theres a request theres a response, so return something 

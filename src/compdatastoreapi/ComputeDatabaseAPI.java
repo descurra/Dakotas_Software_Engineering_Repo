@@ -4,8 +4,9 @@ import project.annotations.ProcessAPI;
 
 @ProcessAPI
 public interface ComputeDatabaseAPI {
-    void configureJob(String inputSource, char delimeter, String outputDestination);
-    void executeJob();
+    ReadRequest readData(ReadRequest request);
+    WriteResponse writeData(WriteRequest request);
     
-
+//only need read and write
+//reading from location
 }

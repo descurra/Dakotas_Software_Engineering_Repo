@@ -8,15 +8,25 @@ import project.annotations.NetworkAPIPrototype;
 
 public class PrototypeUserComputeApi{
     @NetworkAPIPrototype
-    public void prototype(UserComputeAPI api){
-        //Specify source for input
-        String inputSpource = "mock_input_source";
 
-        //Delimeter charactaers for output
-        char delimeter = ',';
+    private UserComputeAPI submit; //user submits job
 
-        //Specify destination for output
-        String outputDestination = "mock_output";
+    public PrototypeUserComputeApi(UserComputeAPI submit){ //Return type
+        this.submit = submit;
     }
-    
+
+    public void prototype(JobResponse newJob){
+        JobRequest jobRequ = submit.submitJob(newJob); 
+        
+        //jobRequ takes in the submit object
+        //Calls JobResponse object to return the response of the job submission
+
+    }
+
 }
+
+
+        //Only process submit job with JobResponse object (placeholder)
+        //calling the interfaces in the APIs, doesn't have to be implemented
+        //Smoke tests don't pass objects, only unit tests to mock objects related tto the interfaces 
+        //API --> Prototype, --> Project
