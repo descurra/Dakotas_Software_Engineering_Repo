@@ -10,13 +10,19 @@ import project.annotations.ConceptualAPIPrototype;
 public class PrototypeWebCalculate{
 
     @ConceptualAPIPrototype
-    public void prototype(WebCalculateAPI api){
-        
-        int mockInput = 0;
-        
-        String mockResult = api.computeResult(mockInput);
+    public void prototype(Comp cal){
+        Solution sol = compute.computeResult(cal);
+        //sol takes in the compute object
+        //Calls Solution object to return the computed result of the calculation
         
 
     }
+    private WebCalculateAPI compute; //compute result of calculation
+
+    public PrototypeWebCalculate(WebCalculateAPI compute){ //Return type
+        this.compute = compute;
+    }
+
+
 
 }
