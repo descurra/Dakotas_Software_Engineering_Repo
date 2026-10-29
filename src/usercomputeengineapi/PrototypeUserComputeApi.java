@@ -8,19 +8,17 @@ import project.annotations.NetworkAPIPrototype;
 
 public class PrototypeUserComputeApi{
     @NetworkAPIPrototype
+    public void prototype(JobRequest newJob){
+        JobResponse jobRes = submit.submitJob(newJob); 
+        
+        //jobRes takes in the submit object
+        //Calls JobResponse object to return the response of the job submission
 
+    }
     private UserComputeAPI submit; //user submits job
 
     public PrototypeUserComputeApi(UserComputeAPI submit){ //Return type
         this.submit = submit;
-    }
-
-    public void prototype(JobResponse newJob){
-        JobRequest jobRequ = submit.submitJob(newJob); 
-        
-        //jobRequ takes in the submit object
-        //Calls JobResponse object to return the response of the job submission
-
     }
 
 }

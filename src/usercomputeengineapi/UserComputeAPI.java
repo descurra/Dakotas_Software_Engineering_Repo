@@ -4,8 +4,8 @@ import project.annotations.NetworkAPI;
 
 @NetworkAPI
 public interface UserComputeAPI {
-    JobRequest submitJob(JobResponse job);
-    //Job request will return the Job response
+    JobResponse submitJob(JobRequest job);
+    //Job response is returned
 
 }
 
