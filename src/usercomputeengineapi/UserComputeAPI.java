@@ -1,12 +1,13 @@
 package usercomputeengineapi;
 
 import project.annotations.NetworkAPI;
+import usercomputeengineapi.user.JobRequest;
+import usercomputeengineapi.webserver.JobResponse;
 
 @NetworkAPI
 public interface UserComputeAPI {
     JobResponse submitJob(JobRequest job);
     //Job response is returned
-
 }
 
 //reutns job respionse 

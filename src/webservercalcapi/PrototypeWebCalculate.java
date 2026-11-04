@@ -6,16 +6,17 @@
 
 package webservercalcapi;
 import project.annotations.ConceptualAPIPrototype;
+import webservercalcapi.calculate.Solution;
+import webservercalcapi.webserver.Comp;
 
 public class PrototypeWebCalculate{
 
     @ConceptualAPIPrototype
-    public void prototype(Comp cal){
+    public void prototype(WebCalculateAPI api, Comp cal){
         Solution sol = compute.computeResult(cal);
+
         //sol takes in the compute object
         //Calls Solution object to return the computed result of the calculation
-        
-
     }
     private WebCalculateAPI compute; //compute result of calculation
 

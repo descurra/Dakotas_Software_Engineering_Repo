@@ -6,17 +6,20 @@
 package compdatastoreapi;
 import java.util.List;
 
+import compdatastoreapi.calculate.Data;
+import compdatastoreapi.calculate.Location;
+import compdatastoreapi.datastorage.WriteResponse;
 import project.annotations.ProcessAPIPrototype;
 
 public class PrototypeComputeDatabase{
     @ProcessAPIPrototype
-    public void prototype(Location readIn, Data writeOut){
+    public void prototype(ComputeDatabaseAPI api, Location readIn, Data writeOut){
 
         //Read from user specified input
         List<Integer> readUserInput = data.readData(readIn);
 
         //Write from user specified input
-        WriteRequest writeUserInput = data.writeData(writeOut);
+        WriteResponse writeUserInput = data.writeData(writeOut);
 
     }
 
