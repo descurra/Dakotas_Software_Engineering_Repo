@@ -12,20 +12,26 @@ import compdatastoreapi.datastorage.WriteResponse;
 import project.annotations.ProcessAPIPrototype;
 
 public class PrototypeComputeDatabase{
+
+    public PrototypeComputeDatabase() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     @ProcessAPIPrototype
-    public void prototype(ComputeDatabaseAPI api, Location readIn, Data writeOut){
+    public void prototype(ComputeDatabaseAPI api){
+        Location readIn = null;
 
         //Read from user specified input
-        List<Integer> readUserInput = data.readData(readIn);
+        List<Integer> readUserInput = api.readData(readIn);
+        Data writeOut = null;
 
         //Write from user specified input
-        WriteResponse writeUserInput = data.writeData(writeOut);
+        WriteResponse writeUserInput = api.writeData(writeOut);
 
     }
 
     private ComputeDatabaseAPI data; //Data being read in and written
 
-    public PrototypeComputeDatabase(ComputeDatabaseAPI data){
+    public PrototypeComputeDatabase(ComputeDatabaseAPI data){ //Return type
         this.data = data;
     }
     

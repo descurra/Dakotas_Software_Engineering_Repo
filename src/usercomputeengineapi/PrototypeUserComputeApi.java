@@ -9,9 +9,15 @@ import usercomputeengineapi.user.JobRequest;
 import usercomputeengineapi.webserver.JobResponse;
 
 public class PrototypeUserComputeApi{
+
+    public PrototypeUserComputeApi() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     @NetworkAPIPrototype
-    public void prototype(UserComputeAPI api, JobRequest newJob){
-        JobResponse jobRes = submit.submitJob(newJob); 
+    public void prototype(UserComputeAPI api){
+        JobRequest newJob = null; //new job request
+        JobResponse jobRes = api.submitJob(newJob); 
 
         //api takes in the UserComputeAPI object
         //Calls UserComputeAPI object to return the response of the job submission

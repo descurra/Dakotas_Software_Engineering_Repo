@@ -8,6 +8,8 @@ import usercomputeengineapi.webserver.JobResponse;
 public interface UserComputeAPI {
     JobResponse submitJob(JobRequest job);
     //Job response is returned
+
+    
 }
 
 //reutns job respionse 
