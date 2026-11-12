@@ -1,11 +1,16 @@
 package webservercalcapi;
 
-import java.lang.annotation.Annotation;
 import java.util.List;
 
-import project.annotations.ConceptualAPI;
+import webservercalcapi.calculate.Solution;
+import webservercalcapi.webserver.Comp;
 
-public class ConceptualAPIImplementation implements ConceptualAPI {
+public class ConceptualAPIImplementation implements WebCalculateAPI{
+    private final WebCalculateAPI conceptualAPI;
+
+    public ConceptualAPIImplementation(WebCalculateAPI conceptualAPI) {
+        this.conceptualAPI = conceptualAPI;
+    }
 
   
     public List<Integer> process(List<Integer> readData) {
@@ -15,9 +20,13 @@ public class ConceptualAPIImplementation implements ConceptualAPI {
         return null;
     }
 
+    //3) Pass intergers to  ConceptualAPI implementation
     @Override
-    public Class<? extends Annotation> annotationType() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Solution computeResult(Comp cal) {
+        return conceptualAPI.computeResult(cal);
+
     }
+
+    
 
 }

@@ -6,17 +6,29 @@
 
 package webservercalcapi;
 import project.annotations.ConceptualAPIPrototype;
+import webservercalcapi.calculate.Solution;
+import webservercalcapi.webserver.Comp;
 
 public class PrototypeWebCalculate{
 
+    public PrototypeWebCalculate() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     @ConceptualAPIPrototype
     public void prototype(WebCalculateAPI api){
-        
-        int mockInput = 0;
-        
-        String mockResult = api.computeResult(mockInput);
-        
+        Comp cal = null; //new calculation request
+        Solution sol = api.computeResult(cal);
 
+        //sol takes in the compute object
+        //Calls Solution object to return the computed result of the calculation
     }
+    private WebCalculateAPI compute; //compute result of calculation
+
+    public PrototypeWebCalculate(WebCalculateAPI compute){ //Return type
+        this.compute = compute;
+    }
+
+
 
 }

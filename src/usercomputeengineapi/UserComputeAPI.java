@@ -1,10 +1,18 @@
 package usercomputeengineapi;
 
 import project.annotations.NetworkAPI;
+import usercomputeengineapi.user.JobRequest;
+import usercomputeengineapi.webserver.JobResponse;
 
 @NetworkAPI
 public interface UserComputeAPI {
-    void configureJob(String inputSource, char delimeter, String outputDestination);
-    
+    JobResponse submitJob(JobRequest job);
+    //Job response is returned
+
     
 }
+
+//reutns job respionse 
+//JobRequest submitjob (JobRequest job)
+//don't use void 
+//If theres a request theres a response, so return something 
