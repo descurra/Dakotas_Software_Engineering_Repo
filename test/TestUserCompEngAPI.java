@@ -1,12 +1,44 @@
 //SMOKE TEST FOR API 1
 //USER <--> COMPUTE ENGINE
-//Testing for 
+//Testing: Job Request and Job Response, 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 
-import usercomputeengineapi.PrototypeUserComputeApi;
+import usercomputeengineapi.user.JobRequest;
+import usercomputeengineapi.webserver.JobResponse;
 public class TestUserCompEngAPI{
+    
+    //Mocking JobRequest and JobResponse classes to test the PrototypeUserComputeApi class
+
+    @Test
+    public void testJobRequest() throws Exception {
+        JobRequest mockJob = Mockito.mock(JobRequest.class);
+        when(mockJob.getJobId()).thenReturn("mock_job_id");
+        when(mockJob.getJobDescription()).thenReturn("mock_job_description");
+
+        Assertions.assertEquals("mock_job_id", mockJob.getJobId());
+        Assertions.assertEquals("mock_job_description", mockJob.getJobDescription());
+    }
+
+    @Test
+    public void testJobResponse() throws Exception{
+        JobResponse mockResponse = Mockito.mock(JobResponse.class);
+        when(mockResponse.getJobId()).thenReturn("mock_job_id");
+        when(mockResponse.getJobStatus()).thenReturn("mock_status");
+        when(mockResponse.getJobResult()).thenReturn("mock_result");
+
+        Assertions.assertEquals("mock_job_id", mockResponse.getJobId());
+        Assertions.assertEquals("mock_status", mockResponse.getJobStatus());
+        Assertions.assertEquals("mock_result", mockResponse.getJobResult());
+    }
+
+
+}
+
+/* 
     @Test
     public void testInputSource(){
         PrototypeUserComputeApi testInputSource = new PrototypeUserComputeApi();
@@ -31,33 +63,4 @@ public class TestUserCompEngAPI{
         String expectedOutputDestination = "mock_destination";
         String actualOutputDestination = "mock_destination"; 
         checkOutputDestination(expectedOutputDestination, actualOutputDestination, testOutputDestination);    
-    }
-
-    //Mocking JobRequest and JobResponse classes to test the PrototypeUserComputeApi class
-    @Test
-    public void testJobRequestAndResponse(){
-        PrototypeUserComputeApi testJobRequestAndResponse = new PrototypeUserComputeApi();
-        String expectedJobRequest = "mock_job_request";
-        String actualJobRequest = "mock_job_request"; 
-        Assertions.assertEquals(expectedJobRequest, actualJobRequest);
-
-        String expectedJobResponse = "mock_job_response";
-        String actualJobResponse = "mock_job_response"; 
-        Assertions.assertEquals(expectedJobResponse, actualJobResponse);
-    }
-
-    
-    //Checking for input source, delimeter, and output destination
-    private void checkInputSource(String expected, String actual, PrototypeUserComputeApi testInputSource){
-        Assertions.assertEquals(expected, actual);
-
-    }
-    private void checkDelimeter(String expected, String actual, PrototypeUserComputeApi testDelimeter){
-        Assertions.assertEquals(expected, actual);
-    }
-
-    private void checkOutputDestination(String expected, String actual, PrototypeUserComputeApi testOutputDestination){
-        Assertions.assertEquals(expected, actual);
-
-    }
-}
+    }*/

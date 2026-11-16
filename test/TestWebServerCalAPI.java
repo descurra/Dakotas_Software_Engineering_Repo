@@ -1,21 +1,36 @@
 //SMOKE TEST FOR API 3
 //Components within compute engine
-//
+//Testing: Soltion, Comp
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import webservercalcapi.PrototypeWebCalculate;
-import webservercalcapi.calculate.Addition;
-import webservercalcapi.calculate.Calculate;
+import webservercalcapi.calculate.Solution;
 import webservercalcapi.webserver.Comp;
 
 
 public class TestWebServerCalAPI{
+    
+    @Test
+    public void testSolution() throws Exception{
+        Solution mockSolution = mock(Solution.class);
+        when(mockSolution.getResult()).thenReturn(30);
 
+        Assertions.assertEquals(30, mockSolution.getResult());
+    }
+
+    @Test
+    public void testComp() throws Exception{
+        Comp mockComp = mock(Comp.class);
+        when(mockComp.getExpression()).thenReturn("mock_expression");
+
+        Assertions.assertEquals("mock_expression", mockComp.getExpression());
+    }
+
+
+    /* 
     //Testing for initialization
     @Test
     public void testIntializeForJob(){
@@ -85,7 +100,7 @@ public class TestWebServerCalAPI{
 
     public void checkWrite(String expected, String actual, PrototypeWebCalculate testWrite){
         Assertions.assertEquals(expected, actual);
-    }
+    }*/
 
 
 

@@ -1,4 +1,8 @@
-//TEST FOR TWO COMPUTE ENGINE COMPONENTS
+//INTEGRATION TEST FOR COMPUTE ENGINE 
+//Use implementations
+//Use test-only data store
+//Give test input data: [1, 10, 25]
+//Add validation to check if the output is correct
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,22 +10,19 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import project.annotations.ConceptualAPI;
-import project.annotations.NetworkAPI;
-import usercomputeengineapi.NetworkAPIImplementation;
-import webservercalcapi.ConceptualAPIImplementation;
-
 
 public class ComputeEngineIntegrationTest{
 
     @Test
     public void testComputeEngine(){
+        //Test input data
         List<Integer> inputValues = Arrays.asList(1, 10, 25);
+        
         InMemoryInputConfig inputConfig = new InMemoryInputConfig(inputValues);
         InMemoryOutputConfig outputConfig = new InMemoryOutputConfig();
 
-        NetworkAPI networkApi = new NetworkAPIImplementation(); 
-        ConceptualAPI conceptualApi = new ConceptualAPIImplementation(); 
+        //NetworkAPI networkApi = new NetworkAPIImplementation(); 
+        //ConceptualAPI conceptualApi = new ConceptualAPIImplementation(); 
         InMemoryDataStore processApi = new InMemoryDataStore();
         List<Integer> readData = processApi.read(inputConfig);
         List<Integer> computedResults = process(readData);

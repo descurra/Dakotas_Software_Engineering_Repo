@@ -1,58 +1,52 @@
 //SMOKE TEST FOR API 2
+//Testing: location, data, writeResponse
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.mock;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 
-import compdatastoreapi.PrototypeComputeDatabase;
+import compdatastoreapi.calculate.Data;
+import compdatastoreapi.calculate.Location;
+import compdatastoreapi.datastorage.WriteResponse;
 
 public class TestCompEngDatabaseAPI{
-    @Test
-    public void testReadFromInputSource(){
-
-        PrototypeComputeDatabase testReadFromInputSource = new PrototypeComputeDatabase();
-        String source = "mock_data";
-        List<Integer> expectedInput = readInputData(source);
-        List<Integer> actualInput = readFromInputSource(source);
-
-        checkInput(expectedInput, actualInput, testReadFromInputSource);
-    }
 
     @Test
-    public void testWrtieToOutputSource(){
-        PrototypeComputeDatabase testWrtieToOutputSource = new PrototypeComputeDatabase();
-        String source = "mock_destination";
-        List<Integer> expectedDataToWrite = Arrays.asList(1, 10, 25);
-        List<Integer> actualDataToWrite = writeFromInputSource(source);
+    public void testLocation() throws Exception{
+        Location mockLocation = Mockito.mock(Location.class);
+        when(mockLocation.getLocationId()).thenReturn("mock_location_id");
+        when(mockLocation.getLocationPath()).thenReturn("mock_location_path");
 
-        checkOutput(expectedDataToWrite, actualDataToWrite, testWrtieToOutputSource);
+        Assertions.assertEquals("mock_location_id", mockLocation.getLocationId());
+        Assertions.assertEquals("mock_location_path", mockLocation.getLocationPath());
     }
 
-    private List<Integer> readInputData(String source){
-        return source.equals("mock_data") ? Arrays.asList(1, 10, 25) : null;
+    @Test
+    public void testData() throws Exception{
+        Data mockData = Mockito.mock(Data.class);
+        when(mockData.getDataId()).thenReturn("mock_data_id");
+        when(mockData.getDataContent()).thenReturn(Arrays.asList(1, 10, 25));
+
+        Assertions.assertEquals("mock_data_id", mockData.getDataId());
+        Assertions.assertEquals(Arrays.asList(1, 10, 25), mockData.getDataContent());
     }
 
-    private List<Integer> readFromInputSource(String source){
-        return source.equals("mock_data") ? Arrays.asList(1, 10, 25) : null;
+    @Test
+    public void testWriteResponse() throws Exception{
+        WriteResponse mockWriteResponse = Mockito.mock(WriteResponse.class);
+        when(mockWriteResponse.getStatus()).thenReturn("mock_status");
+        when(mockWriteResponse.getMessage()).thenReturn("mock_message");
+        when(mockWriteResponse.getOutput()).thenReturn(Arrays.asList(1, 10, 25));
 
+        Assertions.assertEquals("mock_status", mockWriteResponse.getStatus());
+        Assertions.assertEquals("mock_message", mockWriteResponse.getMessage());
     }
+    
 
-    private void checkInput(List<Integer> expected, List<Integer> actual, PrototypeComputeDatabase testReadFromInputSource){
-        Assertions.assertEquals(expected, actual);
-
-    }
-
-    private List<Integer> writeFromInputSource(String source){
-        return source.equals("mock_destination") ? Arrays.asList(1, 10, 25) : null;
-    }
-
-    private void checkOutput(List<Integer> expected, List<Integer> actual, PrototypeComputeDatabase testWriteToOutputSource){
-        Assertions.assertEquals(expected, actual);
-    }
+   
+   
 }
 

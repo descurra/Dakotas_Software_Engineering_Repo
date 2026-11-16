@@ -1,6 +1,9 @@
 package compdatastoreapi.datastorage;
+import java.util.List;
 
 public interface WriteResponse{
-    int getOutput();
+    List<Integer> getOutput();
+    String getMessage();
+    String getStatus();
     
 }
