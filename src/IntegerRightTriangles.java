@@ -1,50 +1,41 @@
+import java.util.Scanner;
 public class IntegerRightTriangles {
     /*
-        Euler Problem 39:
-        p = perimeter of right triangle
+        p = perimeter of a right triangle
         p = a + b + c
 
-        For which value of p <= 1000 is the number of soltutions maximized
-
-        //For loop that iterates through the perimeter values from 1 to 1000
-        //Checks that a^2 + b^2 = c^2
-        
-    
+        Finding total number of solutions for input value p 
     */
 
     public static void main(String[] args) {
-        int limit = 1000; // Perimeter limit
-        int maxSol = 0; // Most amount of solutions had by the best perimeter
-        int bestP = 0; // Value of perimeter with most amount of solutiosn
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter perimeter of a right triangle, must be less than or equal to 10,000: ");
+        int p = scanner.nextInt(); //User inputed perimeter
 
-        for (int p = 1; p <= limit; p++) {
-            int solCount = 0; // Count of solutions for current perimeter
+        if(p <= 10000 && p >= 1){
+            int solCount = 0; //Number of solutions for perimeter
+            
+            //Looping through all possible values of a and b, they can't be more than half the total perimeter
+            for(int a = 1; a < p/2; a++){
+                for(int b = a ; b <= (p-a)/2 ; b++){
 
-            // Iterate through possible values of a and b
-            for (int a = 1; a < p / 2; a++) {
-                for (int b = a; b < p / 2; b++) {
-                    int c = p - a - b; // Calculate c based on perimeter
+                    //Getting c by subtracting a and b from the total peimeter
+                    int c = p - a - b;
 
-                    // Check if it forms a right triangle
-                    if (a * a + b * b == c * c) {
+                    //Checking if a^2 + b^2 = c^2, if yes then solCount gets incrimented by 1
+                    if(a * a + b * b == c * c ){
+                        System.out.println("a: "+a+", b: "+b+", c: "+c); //Displaying solution 
                         solCount++;
                     }
+
                 }
             }
+            //Printing out total number of solutions
+            System.out.println("Total number of {a, b, c} solutions for the perimeter " + p + " is " + solCount);
 
-            // Update maxSol and bestP if current solCount is greater
-            if (solCount > maxSol) {
-                maxSol = solCount;
-                bestP = p;
-            }
+        } else {
+            //Printing if p is out of bounds
+            System.out.println("This is an invalid perimeter");
         }
-
-        System.out.println("Perimeter with the most solutions: " + bestP);
-        System.out.println("Number of solutions: " + maxSol);
-
-
-
-        
-
     }
 }   
