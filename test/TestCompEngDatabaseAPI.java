@@ -6,11 +6,12 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.when;
 
-import compdatastoreapi.calculate.Data;
-import compdatastoreapi.calculate.Location;
-import compdatastoreapi.datastorage.WriteResponse;
+import project.api.compdatastoreapi.calculate.Data;
+import project.api.compdatastoreapi.calculate.Location;
+import project.api.compdatastoreapi.datastorage.WriteResponse;
+
+import static org.mockito.Mockito.when;
 
 public class TestCompEngDatabaseAPI{
 

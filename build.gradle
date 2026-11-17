@@ -31,17 +31,17 @@ dependencies {
 
 test {
     useJUnitPlatform()
-/*
+
 	filter{
 		/*includeTestsMatching "TestCompEngDatabaseAPI"
 		includeTestsMatching "TestUserCompEngAPI"
 		includeTestsMatching "TestWebServerCalcAPI"
 		includeTestsMatching "InMemoryInputConfig"
 		includeTestsMatching "InMemoryOutputConfig"
-		includeTestsMatching "ComputeEngineIntegrationTest"
+		includeTestsMatching "ComputeEngineIntegrationTest"*/
 
 		
 
 
-	}*/
+	}
 }

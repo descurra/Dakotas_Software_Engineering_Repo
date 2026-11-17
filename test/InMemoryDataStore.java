@@ -1,8 +1,8 @@
 import java.util.List;
 
-import compdatastoreapi.datastorage.DataStorage;
 import configurations.InputConfig;
 import configurations.OutputConfig;
+import project.api.compdatastoreapi.datastorage.DataStorage;
 
 public class InMemoryDataStore implements DataStorage{
 

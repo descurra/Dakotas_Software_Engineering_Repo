@@ -11,6 +11,7 @@ public class IntegerRightTriangles {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter perimeter of a right triangle, must be less than or equal to 10,000: ");
         int p = scanner.nextInt(); //User inputed perimeter
+        
 
         if(p <= 10000 && p >= 1){
             int solCount = 0; //Number of solutions for perimeter

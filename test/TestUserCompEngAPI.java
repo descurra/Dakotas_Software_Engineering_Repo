@@ -5,10 +5,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.when;
 
-import usercomputeengineapi.user.JobRequest;
-import usercomputeengineapi.webserver.JobResponse;
+import project.api.usercomputeengineapi.user.JobRequest;
+import project.api.usercomputeengineapi.webserver.JobResponse;
+
+import static org.mockito.Mockito.when;
 public class TestUserCompEngAPI{
     
     //Mocking JobRequest and JobResponse classes to test the PrototypeUserComputeApi class

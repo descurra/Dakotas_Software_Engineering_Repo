@@ -4,11 +4,14 @@
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import project.api.webservercalcapi.calculate.Solution;
+import project.api.webservercalcapi.webserver.Comp;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import webservercalcapi.calculate.Solution;
-import webservercalcapi.webserver.Comp;
+
 
 
 public class TestWebServerCalAPI{
