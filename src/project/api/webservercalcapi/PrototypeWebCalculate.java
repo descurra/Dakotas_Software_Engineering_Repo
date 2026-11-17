@@ -23,8 +23,10 @@ public class PrototypeWebCalculate{
     
     @ConceptualAPIPrototype
     public void prototype(WebCalculateAPI api){
-        Comp cal = null; //new calculation request
-        Solution sol = api.computeResult(cal);
+        if (api != null) {
+            Comp cal = null; // new calculation request
+            Solution sol = api.computeResult(cal);
+        }
 
         //sol takes in the compute object
         //Calls Solution object to return the computed result of the calculation

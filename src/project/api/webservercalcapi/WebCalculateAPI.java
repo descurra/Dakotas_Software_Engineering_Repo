@@ -6,7 +6,7 @@ import project.api.webservercalcapi.webserver.Comp;
 
 
 @ConceptualAPI
-public interface WebCalculateAPI{
+public interface WebCalculateAPI {
     Solution computeResult(Comp cal);
     //Creating solution from computed calculation
 
