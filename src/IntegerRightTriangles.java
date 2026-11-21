@@ -38,5 +38,7 @@ public class IntegerRightTriangles {
             //Printing if p is out of bounds
             System.out.println("This is an invalid perimeter");
         }
+
+        scanner.close();
     }
 }   
