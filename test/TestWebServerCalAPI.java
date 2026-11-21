@@ -38,7 +38,6 @@ public class TestWebServerCalAPI{
         WebCalculateAPI mockConceptualAPI = Mockito.mock(WebCalculateAPI.class);
         ConceptualAPIImplementation compCAI = new ConceptualAPIImplementation(mockConceptualAPI);
 
-
         Comp mockComp = mock(Comp.class);
         when(mockComp.getExpression()).thenReturn("mock_expression");
 
