@@ -61,7 +61,7 @@ public class TestCompEngDatabaseAPI{
         when(mockWriteResponse.getOutput()).thenReturn(Arrays.asList(1, 10, 25));
 
         when(mockProcessAPI.writeData(mockData)).thenReturn(mockWriteResponse);
-        WriteResponse actualWriteResponse = writeResponsePAI.writeData(Mockito.mock(Data.class));
+        WriteResponse actualWriteResponse = writeResponsePAI.writeData(mockData);
 
         Assertions.assertEquals("mock_status", mockWriteResponse.getStatus());
         Assertions.assertEquals("mock_message", mockWriteResponse.getMessage());
