@@ -33,20 +33,4 @@ public class NetworkAPIImplementation implements UserComputeAPI {
         
     }
 
-    
-
-
-
-
-    /*@Override
-    public Class<? extends Annotation> annotationType() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }*/
-
 }
-
-/*public List<Integer> read(Object inputConfig) {
-        return null;
-    }
-
-    */
