@@ -18,12 +18,6 @@ import project.api.webservercalcapi.WebCalculateAPI;
 
 public class ComputeEngineIntegrationTest{
 
-    private WebCalculateAPI conceptualAPI;
-
-    public void ConceptualAPIImplementation(WebCalculateAPI conceptualAPI) {
-        this.conceptualAPI = conceptualAPI;
-    }
-
     @Test
     public void testComputeEngine(){
 
