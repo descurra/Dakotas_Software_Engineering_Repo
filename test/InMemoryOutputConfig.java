@@ -16,7 +16,7 @@ public class InMemoryOutputConfig implements OutputConfig{
 
     @Override
     public List<String> getDataOutput() {
-        return dataOutput;
+        return this.dataOutput;
     }
 
 

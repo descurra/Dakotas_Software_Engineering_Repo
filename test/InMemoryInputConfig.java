@@ -11,7 +11,7 @@ public class InMemoryInputConfig implements InputConfig{
 
     @Override
     public List<Integer> getData() {
-        return data;
+        return this.data;
     }
 
 

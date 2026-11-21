@@ -1,66 +1,52 @@
 //SMOKE TEST FOR API 3
+//Components within compute engine
+//Testing: Soltion, Comp
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.mockito.ArgumentMatchers.anyInt;
+import org.mockito.Mockito;
+
+
+
+import project.api.webservercalcapi.calculate.Solution;
+import project.api.webservercalcapi.webserver.Comp;
+import project.api.webservercalcapi.WebCalculateAPI;
+import project.api.webservercalcapi.ConceptualAPIImplementation;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import webservercalcapi.PrototypeWebCalculate;
-import webservercalcapi.calculate.Addition;
-import webservercalcapi.calculate.Calculate;
-
-
 public class TestWebServerCalAPI{
     @Test
-    public void testIntializeForJob(){
-        PrototypeWebCalculate testInitialize = new PrototypeWebCalculate();
-        String expectedID = "mockID";
-        String actualID = "mockID";
-        checkInitialize(expectedID, actualID, testInitialize);
-    }
+    void testSolution() throws Exception{
+        WebCalculateAPI mockConceptualAPI = Mockito.mock(WebCalculateAPI.class);
+        ConceptualAPIImplementation solutionCAI = new ConceptualAPIImplementation(mockConceptualAPI);
 
+        Comp mockComp = mock(Comp.class);
+        Solution mockSolution = mock(Solution.class);
+        when(mockSolution.getResult()).thenReturn(30);
+
+        when(mockConceptualAPI.computeResult(mockComp)).thenReturn(mockSolution);
+        Solution actualSolution = solutionCAI.computeResult(Mockito.mock(Comp.class));
+
+        Assertions.assertEquals(30, mockSolution.getResult());
+        Assertions.assertNotNull(actualSolution);
+    }
 
     @Test
-    public void testReadForJob(){
-        PrototypeWebCalculate testRead = new PrototypeWebCalculate();
-        String expectedData = "mockDatabase";
-        String actualData = "mockDatabase";
-        checkRead(expectedData, actualData, testRead);
+    void testComp() throws Exception{
+        WebCalculateAPI mockConceptualAPI = Mockito.mock(WebCalculateAPI.class);
+        ConceptualAPIImplementation compCAI = new ConceptualAPIImplementation(mockConceptualAPI);
 
+        Comp mockComp = mock(Comp.class);
+        when(mockComp.getExpression()).thenReturn("mock_expression");
+
+        compCAI.computeResult(mockComp);
+
+        Assertions.assertEquals("mock_expression", mockComp.getExpression());
     }
 
 
-    @Test
-    public void testWriteForJob(){
-        PrototypeWebCalculate testWrite = new PrototypeWebCalculate();
-        String expectedOutput = "mockOutFile";
-        String actualOutput = "mockOutFile";
-        checkWrite(expectedOutput, actualOutput, testWrite);
-    }
-
-
-    @Test
-    public void testCalculation(){
-        Calculate dependency = mock(Calculate.class);
-        when(dependency.validate(anyInt())).thenReturn(true);
-        Addition toTest = new Addition(dependency);
-        int result = toTest.addNumbers(10, 20);
-
-        Assertions.assertEquals(30, result);
-    }
-
-    public void checkInitialize(String expected, String actual, PrototypeWebCalculate testInitialize){
-        Assertions.assertEquals(expected, actual);
-    }
-
-    public void checkRead(String expected, String actual, PrototypeWebCalculate testRead){
-        Assertions.assertEquals(expected, actual);
-    }
-
-    public void checkWrite(String expected, String actual, PrototypeWebCalculate testWrite){
-        Assertions.assertEquals(expected, actual);
-    }
 
 
 
