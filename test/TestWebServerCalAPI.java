@@ -16,21 +16,18 @@ import project.api.webservercalcapi.ConceptualAPIImplementation;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
-
-
 public class TestWebServerCalAPI{
     @Test
     void testSolution() throws Exception{
         WebCalculateAPI mockConceptualAPI = Mockito.mock(WebCalculateAPI.class);
-        ConceptualAPIImplementation SolutionCAI = new ConceptualAPIImplementation(mockConceptualAPI);
+        ConceptualAPIImplementation solutionCAI = new ConceptualAPIImplementation(mockConceptualAPI);
 
         Comp mockComp = mock(Comp.class);
         Solution mockSolution = mock(Solution.class);
         when(mockSolution.getResult()).thenReturn(30);
 
         when(mockConceptualAPI.computeResult(mockComp)).thenReturn(mockSolution);
-        Solution actualSolution = SolutionCAI.computeResult(Mockito.mock(Comp.class));
+        Solution actualSolution = solutionCAI.computeResult(Mockito.mock(Comp.class));
 
         Assertions.assertEquals(30, mockSolution.getResult());
         Assertions.assertNotNull(actualSolution);

@@ -16,8 +16,6 @@ import project.api.compdatastoreapi.calculate.Location;
 
 public class InvalidInputTest  {
 
-
-
     //Test for values <= 0
     @Test 
     void testBelowOne() throws Exception{
