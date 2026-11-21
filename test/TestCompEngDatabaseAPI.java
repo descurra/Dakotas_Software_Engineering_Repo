@@ -65,7 +65,6 @@ public class TestCompEngDatabaseAPI{
 
         Assertions.assertEquals("mock_status", mockWriteResponse.getStatus());
         Assertions.assertEquals("mock_message", mockWriteResponse.getMessage());
-
         Assertions.assertEquals(Arrays.asList(1, 10, 25), actualWriteResponse.getOutput());
     }
     

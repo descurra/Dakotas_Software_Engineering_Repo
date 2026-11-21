@@ -55,7 +55,7 @@ public class TestUserCompEngAPI{
         Assertions.assertEquals("mock_status", mockResponse.getJobStatus());
         Assertions.assertEquals("mock_result", mockResponse.getJobResult());
         
-        Assertions.assertNotNull(actualResponse);
+        Assertions.assertEquals(mockResponse, actualResponse);
     }
 
 
