@@ -18,17 +18,27 @@ import project.api.webservercalcapi.WebCalculateAPI;
 
 public class ComputeEngineIntegrationTest{
 
+    private WebCalculateAPI conceptualAPI;
+
+    public void ConceptualAPIImplementation(WebCalculateAPI conceptualAPI) {
+        this.conceptualAPI = conceptualAPI;
+    }
+
     @Test
     public void testComputeEngine(){
+
+        
         //Test input data
         List<Integer> inputValues = Arrays.asList(1, 10, 25);
+
+        
         
         InMemoryInputConfig inputConfig = new InMemoryInputConfig(inputValues);
         InMemoryOutputConfig outputConfig = new InMemoryOutputConfig();
 
-        WebCalculateAPI conceptualAPI = new ConceptualAPIImplementation(); 
+        //WebCalculateAPI cAPI = new ConceptualAPIImplementation(conceptualAPI); 
         InMemoryDataStore processAPI = new InMemoryDataStore();
-        UserComputeAPI networkAPI = new NetworkAPIImplementation(); 
+       // UserComputeAPI nAPI = new NetworkAPIImplementation(networkAPI); 
         List<Integer> readData = processAPI.read(inputConfig);
         List<Integer> computedResults = process(readData);
         
