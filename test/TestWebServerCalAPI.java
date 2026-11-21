@@ -36,13 +36,13 @@ public class TestWebServerCalAPI{
     @Test
     void testComp() throws Exception{
         WebCalculateAPI mockConceptualAPI = Mockito.mock(WebCalculateAPI.class);
-        ConceptualAPIImplementation CompCAI = new ConceptualAPIImplementation(mockConceptualAPI);
+        ConceptualAPIImplementation compCAI = new ConceptualAPIImplementation(mockConceptualAPI);
 
 
         Comp mockComp = mock(Comp.class);
         when(mockComp.getExpression()).thenReturn("mock_expression");
 
-        CompCAI.computeResult(mockComp);
+        compCAI.computeResult(mockComp);
 
         Assertions.assertEquals("mock_expression", mockComp.getExpression());
     }

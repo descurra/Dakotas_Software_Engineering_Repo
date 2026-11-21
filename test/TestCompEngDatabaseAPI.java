@@ -19,15 +19,14 @@ public class TestCompEngDatabaseAPI{
 
     @Test
     void testLocation() throws Exception{
-
         ComputeDatabaseAPI mockProcessAPI = Mockito.mock(ComputeDatabaseAPI.class); //Mocking Process API
-        ProcessAPIImplementation LocationPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
+        ProcessAPIImplementation locationPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
 
         Location mockLocation = Mockito.mock(Location.class);
         when(mockLocation.getLocationId()).thenReturn("mock_location_id");
         when(mockLocation.getLocationPath()).thenReturn("mock_location_path");
 
-        LocationPAI.readData(mockLocation);
+        locationPAI.readData(mockLocation);
 
         Assertions.assertEquals("mock_location_id", mockLocation.getLocationId());
         Assertions.assertEquals("mock_location_path", mockLocation.getLocationPath());
@@ -37,13 +36,13 @@ public class TestCompEngDatabaseAPI{
     void testData() throws Exception{
 
         ComputeDatabaseAPI mockProcessAPI = Mockito.mock(ComputeDatabaseAPI.class);
-        ProcessAPIImplementation DataPAI = new ProcessAPIImplementation(mockProcessAPI);
+        ProcessAPIImplementation dataPAI = new ProcessAPIImplementation(mockProcessAPI);
 
         Data mockData = Mockito.mock(Data.class);
         when(mockData.getDataId()).thenReturn("mock_data_id");
         when(mockData.getDataContent()).thenReturn(Arrays.asList(1, 10, 25));
 
-        DataPAI.writeData(mockData);
+        dataPAI.writeData(mockData);
 
         Assertions.assertEquals("mock_data_id", mockData.getDataId());
         Assertions.assertEquals(Arrays.asList(1, 10, 25), mockData.getDataContent());
@@ -52,7 +51,7 @@ public class TestCompEngDatabaseAPI{
     @Test
     void testWriteResponse() throws Exception{
         ComputeDatabaseAPI mockProcessAPI = Mockito.mock(ComputeDatabaseAPI.class);
-        ProcessAPIImplementation WriteResponsePAI = new ProcessAPIImplementation(mockProcessAPI);
+        ProcessAPIImplementation writeResponsePAI = new ProcessAPIImplementation(mockProcessAPI);
 
         Data mockData = Mockito.mock(Data.class);
         WriteResponse mockWriteResponse = Mockito.mock(WriteResponse.class);
@@ -62,7 +61,7 @@ public class TestCompEngDatabaseAPI{
         when(mockWriteResponse.getOutput()).thenReturn(Arrays.asList(1, 10, 25));
 
         when(mockProcessAPI.writeData(mockData)).thenReturn(mockWriteResponse);
-        WriteResponse actualWriteResponse = WriteResponsePAI.writeData(Mockito.mock(Data.class));
+        WriteResponse actualWriteResponse = writeResponsePAI.writeData(Mockito.mock(Data.class));
 
 
         Assertions.assertEquals("mock_status", mockWriteResponse.getStatus());

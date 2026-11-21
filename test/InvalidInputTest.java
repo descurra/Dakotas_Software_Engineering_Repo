@@ -20,12 +20,12 @@ public class InvalidInputTest  {
     @Test 
     void testBelowOne() throws Exception{
         ComputeDatabaseAPI mockProcessAPI = Mockito.mock(ComputeDatabaseAPI.class); //Mocking Process API
-        ProcessAPIImplementation DataPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
+        ProcessAPIImplementation dataPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
 
         Location mockLocation = Mockito.mock(Location.class);
         when(mockProcessAPI.readData(mockLocation)).thenReturn(Arrays.asList(0));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { DataPAI.readData(mockLocation);});
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { dataPAI.readData(mockLocation);});
    
     }
     
@@ -33,12 +33,12 @@ public class InvalidInputTest  {
     @Test 
     void testOverTenThousand() throws Exception{
         ComputeDatabaseAPI mockProcessAPI = Mockito.mock(ComputeDatabaseAPI.class); //Mocking Process API
-        ProcessAPIImplementation DataPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
+        ProcessAPIImplementation dataPAI = new ProcessAPIImplementation(mockProcessAPI); //Implementing mock API, assigning to variable LocationPAI
 
         Location mockLocation = Mockito.mock(Location.class);
         when(mockProcessAPI.readData(mockLocation)).thenReturn(Arrays.asList(10001));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { DataPAI.readData(mockLocation);});
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { dataPAI.readData(mockLocation);});
    
 
 

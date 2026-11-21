@@ -20,13 +20,13 @@ public class TestUserCompEngAPI{
     void testJobRequest() throws Exception{
 
         UserComputeAPI mockNetworkAPI = Mockito.mock(UserComputeAPI.class); //Mocking Network API
-        NetworkAPIImplementation JobRequestNAI = new NetworkAPIImplementation(mockNetworkAPI); //Implemeneting mock API, assigning to variable JobRequestNAI
+        NetworkAPIImplementation jobRequestNAI = new NetworkAPIImplementation(mockNetworkAPI); //Implemeneting mock API, assigning to variable JobRequestNAI
 
         JobRequest mockJob = Mockito.mock(JobRequest.class); //Mocking Job Request
         when(mockJob.getJobId()).thenReturn("mock_job_id");
         when(mockJob.getJobDescription()).thenReturn("mock_job_description");
 
-        JobRequestNAI.submitJob(mockJob); 
+        jobRequestNAI.submitJob(mockJob); 
 
         //Seeting if getJobId and getJobDescription methods work by comparing their outputs with the expected output
         Assertions.assertEquals("mock_job_id", mockJob.getJobId()); 
@@ -39,7 +39,7 @@ public class TestUserCompEngAPI{
     @Test
     void testJobResponse() throws Exception{
         UserComputeAPI mockNetworkAPI = Mockito.mock(UserComputeAPI.class);
-        NetworkAPIImplementation JobResponseNAI = new NetworkAPIImplementation(mockNetworkAPI);
+        NetworkAPIImplementation jobResponseNAI = new NetworkAPIImplementation(mockNetworkAPI);
 
         JobRequest mockJob = Mockito.mock(JobRequest.class); //Mock job to test if reponse works
         JobResponse mockResponse = Mockito.mock(JobResponse.class); //Mocking Job Response
@@ -49,7 +49,7 @@ public class TestUserCompEngAPI{
         when(mockResponse.getJobResult()).thenReturn("mock_result");
 
         when(mockNetworkAPI.submitJob(mockJob)).thenReturn(mockResponse);
-        JobResponse actualResponse = JobResponseNAI.submitJob(Mockito.mock(JobRequest.class));
+        JobResponse actualResponse = jobResponseNAI.submitJob(Mockito.mock(JobRequest.class));
 
         Assertions.assertEquals("mock_job_id", mockResponse.getJobId());
         Assertions.assertEquals("mock_status", mockResponse.getJobStatus());
