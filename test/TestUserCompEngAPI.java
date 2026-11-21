@@ -49,7 +49,7 @@ public class TestUserCompEngAPI{
         when(mockResponse.getJobResult()).thenReturn("mock_result");
 
         when(mockNetworkAPI.submitJob(mockJob)).thenReturn(mockResponse);
-        JobResponse actualResponse = jobResponseNAI.submitJob(Mockito.mock(JobRequest.class));
+        JobResponse actualResponse = jobResponseNAI.submitJob(mockJob);
 
         Assertions.assertEquals("mock_job_id", mockResponse.getJobId());
         Assertions.assertEquals("mock_status", mockResponse.getJobStatus());
