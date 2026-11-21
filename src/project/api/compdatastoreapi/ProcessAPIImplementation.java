@@ -2,6 +2,8 @@ package project.api.compdatastoreapi;
 
 import java.util.List;
 
+import configurations.InputConfig;
+import configurations.OutputConfig;
 import project.api.compdatastoreapi.calculate.Data;
 import project.api.compdatastoreapi.calculate.Location;
 import project.api.compdatastoreapi.datastorage.WriteResponse;
@@ -31,23 +33,20 @@ public class ProcessAPIImplementation implements ComputeDatabaseAPI {
         return processAPI.readData(read);
     }
 
-    /*
-    // 1) Read in data
-    public List<Integer> readInput(Location read) {
-        // Implement logic to read integers from the specified input location
-        // For example, read from a file or database
-        return null; // Replace with actual implementation
-        
+
+    @Override
+    public List<Integer> read(InputConfig inputConfig) {
+        return processAPI.read(inputConfig);
+
     }
 
 
-    // 2) Write to user spcified location
-    public WriteResponse writeOutput(Location write, List<Integer> data) {
-        // Implement logic to write integers to the specified output location
-        // For example, write to a file or database
-        return null; // Replace with actual implementation
+    @Override
+    public boolean write(OutputConfig outputConfig, List<String> data) {
+        return processAPI.write(outputConfig, data);
+
     }
-    */
+
 
 
 }

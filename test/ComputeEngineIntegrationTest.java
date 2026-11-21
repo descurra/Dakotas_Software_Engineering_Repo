@@ -10,6 +10,11 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import project.api.usercomputeengineapi.NetworkAPIImplementation;
+import project.api.webservercalcapi.ConceptualAPIImplementation;
+import project.api.usercomputeengineapi.UserComputeAPI;
+import project.api.webservercalcapi.WebCalculateAPI;
+
 
 public class ComputeEngineIntegrationTest{
 
@@ -21,10 +26,10 @@ public class ComputeEngineIntegrationTest{
         InMemoryInputConfig inputConfig = new InMemoryInputConfig(inputValues);
         InMemoryOutputConfig outputConfig = new InMemoryOutputConfig();
 
-        //NetworkAPI networkApi = new NetworkAPIImplementation(); 
-        //ConceptualAPI conceptualApi = new ConceptualAPIImplementation(); 
-        InMemoryDataStore processApi = new InMemoryDataStore();
-        List<Integer> readData = processApi.read(inputConfig);
+        WebCalculateAPI conceptualAPI = new ConceptualAPIImplementation(); 
+        InMemoryDataStore processAPI = new InMemoryDataStore();
+        UserComputeAPI networkAPI = new NetworkAPIImplementation(); 
+        List<Integer> readData = processAPI.read(inputConfig);
         List<Integer> computedResults = process(readData);
         
  
