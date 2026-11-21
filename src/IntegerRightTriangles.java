@@ -18,7 +18,7 @@ public class IntegerRightTriangles {
             
             //Looping through all possible values of a and b, they can't be more than half the total perimeter
             for(int a = 1; a < p/2; a++){
-                for(int b = a ; b <= (p-a)/2 ; b++){
+                for(int b = a; b <= (p-a)/2; b++){
 
                     //Getting c by subtracting a and b from the total peimeter
                     int c = p - a - b;

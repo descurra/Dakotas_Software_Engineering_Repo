@@ -25,8 +25,10 @@ public class InvalidInputTest  {
         Location mockLocation = Mockito.mock(Location.class);
         when(mockProcessAPI.readData(mockLocation)).thenReturn(Arrays.asList(0));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { dataPAI.readData(mockLocation);});
-   
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { 
+            dataPAI.readData(mockLocation);
+            }
+        );
     }
     
     //Test for values > 10000
@@ -38,10 +40,10 @@ public class InvalidInputTest  {
         Location mockLocation = Mockito.mock(Location.class);
         when(mockProcessAPI.readData(mockLocation)).thenReturn(Arrays.asList(10001));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { dataPAI.readData(mockLocation);});
-   
-
-
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { 
+            dataPAI.readData(mockLocation);
+            }
+        );
     }
 
 
