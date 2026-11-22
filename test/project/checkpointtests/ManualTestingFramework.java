@@ -23,10 +23,10 @@ import project.api.compdatastoreapi.ComputeDatabaseAPI;
 import project.api.compdatastoreapi.ProcessAPIImplementation;
 
 import configurations.InputConfig;
-import configurations.OutputConfig;
+import configurations.OutputConfig; 
 
 import project.api.usercomputeengineapi.user.JobRequest;
-
+import project.api.usercomputeengineapi.JobRequestImp;
 
  
 
@@ -37,6 +37,8 @@ public class ManualTestingFramework {
     
     public static final String INPUT = "manualTestInput.txt";
     public static final String OUTPUT = "manualTestOutput.txt";
+
+    public static final char DEL = ',';
 
     public static void main(String[] args) {
         // TODO 1:
@@ -65,10 +67,10 @@ public class ManualTestingFramework {
         // so you can refer to the files just using the INPUT/OUTPUT constants. You do not 
         // need to (and should not) actually create those files in your repo
 
-        InputConfig inputConfig = new InputConfig(INPUT);
-        OutputConfig outputConfig = new OutputConfig(OUTPUT);
-        JobRequest request = new JobRequest(inputConfig, outputConfig, ',');
+        InputConfig inputConfig = new InMemoryInputConfig(INPUT);
+        OutputConfig outputConfig = new InMemoryOutputConfig(OUTPUT);
+        JobRequest job = new JobRequestImp(inputConfig, outputConfig, DEL);
 
-        networkAPI.submitJob(request);
+        networkAPI.submitJob(job);
     }
 }

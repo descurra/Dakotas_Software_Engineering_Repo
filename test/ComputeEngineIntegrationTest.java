@@ -14,6 +14,8 @@ import project.api.usercomputeengineapi.NetworkAPIImplementation;
 import project.api.webservercalcapi.ConceptualAPIImplementation;
 import project.api.usercomputeengineapi.UserComputeAPI;
 import project.api.webservercalcapi.WebCalculateAPI;
+import project.checkpointtests.InMemoryInputConfig;
+import project.checkpointtests.InMemoryOutputConfig;
 
 
 public class ComputeEngineIntegrationTest{
