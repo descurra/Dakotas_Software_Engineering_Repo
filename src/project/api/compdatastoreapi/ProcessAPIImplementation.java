@@ -17,6 +17,12 @@ public class ProcessAPIImplementation implements ComputeDatabaseAPI {
     }
 
     
+    public ProcessAPIImplementation() {
+        this.processAPI = null;
+        //TODO Auto-generated constructor stub
+    }
+
+
     // Request ProcessAPI implementation to write output
     //Write to user specified location
     @Override

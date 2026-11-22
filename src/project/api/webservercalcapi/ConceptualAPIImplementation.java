@@ -13,6 +13,11 @@ public class ConceptualAPIImplementation implements WebCalculateAPI{
     }
 
   
+    public ConceptualAPIImplementation() {
+        this.conceptualAPI = null;
+    }
+
+
     public List<Integer> process(List<Integer> readData) {
         if (readData == null) {
             return List.of(); // Return an empty list if input is null
