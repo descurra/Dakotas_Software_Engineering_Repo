@@ -26,7 +26,7 @@ dependencies {
 	implementation('com.google.code.gson:gson:2.13.1')
 
 	//implement spoon
-	implementation("fr.inria.gforge.spoon:spoon-core:10.4.0")
+	testImplementation('fr.inria.gforge.spoon:spoon-core:10.4.0')
 }
 
 test {
@@ -39,5 +39,9 @@ test {
 		includeTestsMatching "InMemoryInputConfig"
 		includeTestsMatching "InMemoryOutputConfig"
 		includeTestsMatching "ComputeEngineIntegrationTest"
+
+		
+
+
 	}
 }
